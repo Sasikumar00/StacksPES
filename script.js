@@ -1,16 +1,20 @@
 //Setting Random colors
 
+let temp;
 let colorarr = ['orangegrad', 'bluegrad', 'cyangrad', 'purpgrad'];
 push = document.getElementById('push');
 push.addEventListener('click', () => {
     let color = Math.floor((Math.random() * 3));
     let randnum = Math.floor((Math.random() * 100));
-    let temp = randnum
+    if (color == temp) {
+        color++;
+    }
     container.innerHTML += `<div class="stack" id=${colorarr[color]}>
     ${randnum}
     </div>`;
     stack = Array.from(document.getElementsByClassName('stack'));
     gooback();
+    temp = color;
 })
 
 //Push stack animation
