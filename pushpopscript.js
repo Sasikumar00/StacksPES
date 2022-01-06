@@ -81,8 +81,17 @@ container.addEventListener('mouseout', () => {
 function popit() {
     console.log(length1);
     if ((length1 - 1) > 0) {
-        divs[length1 - 1].style.marginLeft = '400px';
-        length1--;
+        stack.forEach(ele => {
+            let move = i * 35
+            ele.style.marginLeft = `${move}px`;
+            ele.classList.add('hovereffect');
+            i++;
+        });
+        let timeout = setTimeout(() => {
+            divs[length1 - 1].style.marginLeft = '100%';
+            length1--;
+        }, 1000)
+        i = 0;
     }
     else {
         alert("STACK IS EMPTY!!!\n PUSH ELEMENTS TO THE STACK");
@@ -93,6 +102,12 @@ function popitt() {
     if ((length2 - 1) > 0) {
         divs[length2 - 1].remove();
         length2--;
+        let timeout = setTimeout(() => {
+            stack.forEach(ele => {
+                ele.style.marginLeft = `0px`;
+                ele.classList.remove('hovereffect');
+            });
+        }, 800)
     }
     else {
 
@@ -101,8 +116,8 @@ function popitt() {
 let timeout1;
 let timeout2;
 function latestart() {
-    timeout1 = setTimeout(popit, 800);
-    timeout2 = setTimeout(popitt, 1200);
+    timeout1 = setTimeout(popit, 500);
+    timeout2 = setTimeout(popitt, 2500);
 }
 
 //POP OPERATION
