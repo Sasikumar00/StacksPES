@@ -5,7 +5,7 @@
 body{
     display: flex;
     justify-content: space-between;
-    background-image: url('/pexels-nick-collins-3417418.jpg');
+    background-image: url('/assets/pexels-nick-collins-3417418.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
