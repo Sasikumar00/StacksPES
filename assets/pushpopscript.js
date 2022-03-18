@@ -5,7 +5,7 @@ let temp;
 let divs = document.getElementById('container').childNodes;
 let length1;
 let length2;
-push = document.getElementById('push');
+let push = document.getElementById('push');
 let container = document.getElementById('container');
 let body = document.getElementById('body');
 let reset = document.getElementById('reset');
@@ -16,7 +16,7 @@ reset.addEventListener('click', () => {
 })
 
 //PUSH OPERATION
-push.addEventListener('click', () => {
+function pushit() {
     if ((divs.length) > 14) {
         alert("STACK IS FULL!!!");
     }
@@ -34,8 +34,10 @@ push.addEventListener('click', () => {
         length1 = divs.length
         length2 = divs.length
     }
+}
 
-})
+push.addEventListener('click', pushit)
+
 //PUSH ANIMATION
 
 
@@ -54,7 +56,7 @@ function goback() {
 
 
 let i = 0;
-container.addEventListener('mouseover', () => {
+function stackanimateopen() {
     stack.forEach(ele => {
         let move = i * 35
         ele.style.marginLeft = `${move}px`;
@@ -62,22 +64,22 @@ container.addEventListener('mouseover', () => {
         i++;
     });
     i = 0;
-});
+}
+container.addEventListener('mouseover', stackanimateopen);
 
 //Stack hover effect close
 
 
-container.addEventListener('mouseout', () => {
+function stackanimateclose() {
     stack.forEach(ele => {
         ele.style.marginLeft = `0px`;
         ele.classList.remove('hovereffect');
     });
-});
+}
+container.addEventListener('mouseout', stackanimateclose);
 
-
-//ANIMATION FUNCTIONS FOR POP OPERATION
-
-
+//POP function
+let pop = document.getElementById('pop');
 function popit() {
     console.log(length1);
     if ((length1 - 1) > 0) {
@@ -89,8 +91,17 @@ function popit() {
         });
         let timeout = setTimeout(() => {
             divs[length1 - 1].style.marginLeft = '100%';
+        }, 900)
+        let t = setTimeout(() => {
+            divs[length1 - 1].remove();
+            let t2 = setTimeout(() => {
+                stack.forEach(ele => {
+                    ele.style.marginLeft = `0px`;
+                    ele.classList.remove('hovereffect');
+                });
+            }, 900)
             length1--;
-        }, 1000)
+        }, 2000);
         i = 0;
     }
     else {
@@ -98,31 +109,4 @@ function popit() {
     }
 
 }
-function popitt() {
-    if ((length2 - 1) > 0) {
-        divs[length2 - 1].remove();
-        length2--;
-        let timeout = setTimeout(() => {
-            stack.forEach(ele => {
-                ele.style.marginLeft = `0px`;
-                ele.classList.remove('hovereffect');
-            });
-        }, 800)
-    }
-    else {
-
-    }
-}
-let timeout1;
-let timeout2;
-function latestart() {
-    timeout1 = setTimeout(popit, 500);
-    timeout2 = setTimeout(popitt, 2500);
-}
-
-//POP OPERATION
-
-let pop = document.getElementById('pop');
-pop.addEventListener('click', () => {
-    latestart();
-})
+pop.addEventListener('click', popit)
