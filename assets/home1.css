@@ -25,12 +25,36 @@ body{
     width: 90vw;
     height: 97.5vh;
 }
-
+center{
+    font-size: 70px;
+    font-family: 'Secular One', sans-serif;
+    color: rgb(255, 255, 255);
+    margin-left: 65px;
+    animation-name: textcolor;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes textcolor {
+    0%{
+        color: white;
+    }
+    50%{
+        color: rgb(26, 26, 26);
+    }
+    100%{
+        color: white;
+    }
+    
+}
+.main-wrap{
+    position: relative;
+    top: 35%;
+}
 /*Properties for stack container*/
 
 #container{
     position: absolute;
-    top: 16%;
+    top: -87px;
     left: 0;
     transform:rotate3d(0,0,1,-90deg);
     width: 42%;
@@ -58,13 +82,14 @@ body{
 /*Properties for menu container*/
 
 .operat{
-    position: absolute;
-    top: 10%;
-    right: 7%;
+    position: relative;
+    right: -600px;
+    top: -200px;
     width: 50%;
     height: 75%;
     background: transparent;
     border-radius: 5px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +110,7 @@ body{
     outline: none;
     width: 100%;
     padding: 20px 100px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 10px 0;
     box-shadow: 5px 5px 10px rgb(14, 14, 14);
     transition: all .3s ease;
