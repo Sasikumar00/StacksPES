@@ -5,7 +5,7 @@ let temp;
 let divs = document.getElementById('container').childNodes;
 let length1;
 let length2;
-let push = document.getElementById('push');
+//let push = document.getElementById('push');
 let container = document.getElementById('container');
 let body = document.getElementById('body');
 let reset = document.getElementById('reset');
@@ -36,7 +36,7 @@ function pushit(e) {
     }
 }
 
-push.addEventListener('click', pushit)
+//push.addEventListener('click', pushit)
 
 //PUSH ANIMATION
 
@@ -79,7 +79,7 @@ function stackanimateclose() {
 container.addEventListener('mouseout', stackanimateclose);
 
 //POP function
-let pop = document.getElementById('pop');
+//let pop = document.getElementById('pop');
 function popit() {
     console.log(length1);
     if ((length1 - 1) > 0) {
@@ -109,4 +109,4 @@ function popit() {
     }
 
 }
-pop.addEventListener('click', popit)
+//pop.addEventListener('click', popit)

@@ -1,3 +1,5 @@
+// Infix to Prefix Conversion
+// Stack class to define a stack
 class Stack {
     constructor(length) {
         this.stack = Array(length);
@@ -107,3 +109,5 @@ function infixToPrefix(infix) {
 }
 
 console.log(infixToPrefix("a/b+(c*d^e+(g/h*f)^(i-j)-k)*l-m"));
+
+// Code contributed by Vasundhara Shukla

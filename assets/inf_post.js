@@ -1,17 +1,17 @@
 var stackarr = [];
- 
+
 // Variable topp initialized with -1
 var topp = -1;
- 
+
 // Push function for pushing
 // elements inside stack
-function push(e) {
+function pushfunc(e) {
     topp++;
     stackarr[topp] = e;
 }
- 
+
 // Pop function for returning top element
-function pop() {
+function popfunc() {
     if (topp == -1)
         return 0;
     else {
@@ -20,7 +20,7 @@ function pop() {
         return popped_ele;
     }
 }
- 
+
 // Function to check whether the passed
 // character is operator or not
 function operator(op) {
@@ -33,7 +33,7 @@ function operator(op) {
     else
         return false;
 }
- 
+
 // Function to return the precedency of operator
 function precedency(pre) {
     if (pre == '@' || pre == '(' || pre == ')') {
@@ -51,63 +51,88 @@ function precedency(pre) {
     else
         return 0;
 }
- 
+
 // Function to convert Infix to Postfix
 function InfixtoPostfix() {
- 
+
     // Postfix array created
     var postfix = [];
     var temp = 0;
-    push('@');
+    pushfunc('@');
     infixval = document.getElementById("infixvalue").value;
- 
+
     // Iterate on infix string
     for (var i = 0; i < infixval.length; i++) {
         var el = infixval[i];
- 
+
         // Checking whether operator or not
         if (operator(el)) {
             if (el == ')') {
                 while (stackarr[topp] != "(") {
-                    postfix[temp++] = pop();
+                    postfix[temp++] = popfunc();
+                    popit();
+                    setTimeout(() => { console.log() }, 2000);
+
                 }
-                pop();
+                popfunc();
+                popit();
+                setTimeout(() => { console.log() }, 2000);
             }
- 
+
             // Checking whether el is (  or not
             else if (el == '(') {
-                push(el);
+                pushfunc(el);
+                pushit(el);
+                setTimeout(() => { console.log() }, 2000);
+
             }
- 
+
             // Comparing precedency of el and
             // stackarr[topp]
             else if (precedency(el) > precedency(stackarr[topp])) {
-                push(el);
+                pushfunc(el);
+                pushit(el);
+                setTimeout(() => { console.log() }, 2000);
+
+
             }
             else {
                 while (precedency(el) <=
                     precedency(stackarr[topp]) && topp > -1) {
-                    postfix[temp++] = pop();
+                    postfix[temp++] = popfunc();
+                    popit();
+                    setTimeout(() => { console.log() }, 2000);
+
                 }
-                push(el);
+                pushfunc(el);
+                pushit(el);
+                setTimeout(() => { console.log() }, 2000);
+
             }
         }
         else {
             postfix[temp++] = el;
         }
     }
- 
+
     // Adding character until stackarr[topp] is @
     while (stackarr[topp] != '@') {
-        postfix[temp++] = pop();
+        postfix[temp++] = popfunc();
+        popit();
+        setTimeout(() => { console.log() }, 2000);
+
     }
- 
+    popit();
+    setTimeout(() => { console.log() }, 2000);
+
+
     // String to store postfix expression
     var st = "";
     for (var i = 0; i < postfix.length; i++)
         st += postfix[i];
- 
+
     // To print postfix expression in HTML
-    //document.getElementById("text").innerHTML = st;
-    console.log(st)
+    console.log(stackarr);
+    document.getElementById("post").value = st;
+    // console.log(st)
 }
