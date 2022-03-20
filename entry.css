@@ -1,0 +1,61 @@
+@keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    30% {
+      transform: translateX(5%);background: rgba(56, 55, 55, 0.897);
+    }
+    45% {
+        transform: translateX(0);background: rgba(10, 10, 10, 0.932);
+      }
+    55% {
+        transform: translateX(0);background: rgba(10, 10, 10, 0.932);
+      }
+    70% {
+        transform: translateX(5%);background: rgba(56, 55, 55, 0.897);
+      }
+    100% {
+        transform: translateX(120%);
+      }
+  }
+  #entry {
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInLeft;
+    background: rgba(56, 55, 55, 0.493);
+    padding: 40px;
+    padding-top:10%;
+    padding-bottom:10% ;
+    width:100%;
+    position: absolute;
+    animation-fill-mode: forwards;
+  }
+
+  .text-3d-5 {
+	font-size: 300px;
+	color: #FFFFFF;
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-weight: bold;
+	text-shadow: 0 0 0 rgb(251, 251, 251),
+				1px -1px 0 rgb(247, 247, 247),
+				2px -2px 0 rgb(243, 243, 243),
+				3px -3px 0 rgb(239, 239, 239),
+				4px -4px 0 rgb(235, 235, 235),
+				5px -5px 0 rgb(231, 231, 231),
+				6px -6px 0 rgb(227, 227, 227),
+				7px -7px 0 rgb(224, 224, 224),
+				8px -8px 0 rgb(220, 220, 220),
+				9px -9px 0 rgb(216, 216, 216),
+				10px -10px 0 rgb(212, 212, 212),
+				11px -11px 0 rgb(208, 208, 208),
+				12px -12px 0 rgb(204, 204, 204),
+				13px -13px 0 rgb(200, 200, 200),
+				14px -14px 0 rgb(196, 196, 196),
+				15px -15px 0 rgb(192, 192, 192),
+				16px -16px 0 rgb(188, 188, 188),
+				17px -17px 16px rgba(0, 0, 0, 0.45),
+				17px -17px 1px rgba(0, 0, 0, 0.08),
+				0 0 16px rgba(0, 0, 0, .2)
+}
