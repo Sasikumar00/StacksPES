@@ -70,11 +70,12 @@ async function InfixtoPostfix() {
                 while (stackarr[topp] != "(") {
                     postfix[temp++] = popfunc();
                     popit();
-                    await sleep(2000);
+                    await sleep(3000);
+                    document.getElementById("post").value =(postfix.join(""));
                 }
                 popfunc();
                 popit();
-                await sleep(2000);
+                await sleep(3000);
                 
             }
 
@@ -82,7 +83,7 @@ async function InfixtoPostfix() {
             else if (el == '(') {
                 pushfunc(el);
                 pushit(el);
-                await sleep(2000);
+                await sleep(3000);
 
             }
 
@@ -91,7 +92,7 @@ async function InfixtoPostfix() {
             else if (precedency(el) > precedency(stackarr[topp])) {
                 pushfunc(el);
                 pushit(el);
-                await sleep(2000);
+                await sleep(3000);
                 
 
 
@@ -100,16 +101,18 @@ async function InfixtoPostfix() {
                     precedency(stackarr[topp]) && topp > -1) {
                     postfix[temp++] = popfunc();
                     popit();
-                    await sleep(2000); 
+                    await sleep(3000);
+                    document.getElementById("post").value =(postfix.join(""));
 
                 }
                 pushfunc(el);
                 pushit(el);
-                await sleep(2000);
+                await sleep(3000);
 
             }
         } else {
             postfix[temp++] = el;
+            document.getElementById("post").value =(postfix.join(""));
         }
     }
 
@@ -117,11 +120,12 @@ async function InfixtoPostfix() {
     while (stackarr[topp] != '@') {
         postfix[temp++] = popfunc();
         popit();
-        await sleep(2000);
+        await sleep(3000);
+        document.getElementById("post").value =(postfix.join(""));
 
     }
-    popit();
-    await sleep(2000);
+    //popit();
+    //await sleep(3000);
 
 
     // String to store postfix expression
@@ -130,7 +134,7 @@ async function InfixtoPostfix() {
         st += postfix[i];
 
     // To print postfix expression in HTML
-    console.log(stackarr);
+    // console.log(stackarr);
     document.getElementById("post").value = st;
     // console.log(st)
 }

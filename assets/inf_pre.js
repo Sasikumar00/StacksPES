@@ -50,6 +50,7 @@ function priority(ch) {
 async function infixToPrefix(infix) {
     var prefix = "";
     var revInfix = "";
+    let dataa = document.getElementById("pre");
 
     // Replacing '(' with ')' and
     // reversing the input string
@@ -71,7 +72,7 @@ async function infixToPrefix(infix) {
         if (i == '(') {
             stackk.push(i);
             pushit(i);
-            await sleep(2500);
+            await sleep(3000);
         }
 
         // if character is ')' pop out elements
@@ -82,7 +83,8 @@ async function infixToPrefix(infix) {
             while (stackk.top > -1 && ch != '(') {
                 prefix += stackk.pop();
                 popit();
-                await sleep(2500);
+                await sleep(3000);
+                dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
             }
             stackk.pop();
@@ -92,6 +94,7 @@ async function infixToPrefix(infix) {
         // add it to the answer string  
         else if (!isOperator(i)) {
             prefix += i;
+            dataa.value = prefix;
         }
 
         // if the character is any operator
@@ -103,12 +106,13 @@ async function infixToPrefix(infix) {
             while (stackk.top > -1 && (priority(i) <= priority(ch))) {
                 prefix += stackk.pop();
                 popit();
-                await sleep(2500);
+                await sleep(3000);
+                dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
             }
             stackk.push(i);
             pushit(i);
-            await sleep(2500);
+            await sleep(3000);
         }
     }
 
@@ -117,13 +121,18 @@ async function infixToPrefix(infix) {
     while (stackk.top > -1) {
         prefix += stackk.pop();
         popit();
-        await sleep(2500);
+        await sleep(3000);
+        dataa.value = prefix;
     }
 
+    
     // Return the reversed answer string
-    return prefix.split('').reverse().join('');
+    dataa.value = prefix.split('').reverse().join('');
 }
 
-console.log(infixToPrefix("a/b+(c*d^e+(g/h*f)^(i-j)-k)*l-m"));
+function start_conversion(){
+    let data = document.getElementById("num").value;
+    // infixToPrefix(data);
+    console.log(infixToPrefix(data));
+}
 
-// Code contributed by Vasundhara Shukla

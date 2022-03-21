@@ -81,7 +81,7 @@ container.addEventListener('mouseout', stackanimateclose);
 //POP function
 //let pop = document.getElementById('pop');
 function popit() {
-    console.log(length1);
+    // console.log(length1);
     if ((length1 - 1) > 0) {
         stack.forEach(ele => {
             let move = i * 35
