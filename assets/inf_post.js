@@ -10,6 +10,10 @@ function pushfunc(e) {
     stackarr[topp] = e;
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Pop function for returning top element
 function popfunc() {
     if (topp == -1)
@@ -29,8 +33,7 @@ function operator(op) {
         op == '/' || op == '(' ||
         op == ')') {
         return true;
-    }
-    else
+    } else
         return false;
 }
 
@@ -38,22 +41,18 @@ function operator(op) {
 function precedency(pre) {
     if (pre == '@' || pre == '(' || pre == ')') {
         return 1;
-    }
-    else if (pre == '+' || pre == '-') {
+    } else if (pre == '+' || pre == '-') {
         return 2;
-    }
-    else if (pre == '/' || pre == '*') {
+    } else if (pre == '/' || pre == '*') {
         return 3;
-    }
-    else if (pre == '^') {
+    } else if (pre == '^') {
         return 4;
-    }
-    else
+    } else
         return 0;
 }
 
 // Function to convert Infix to Postfix
-function InfixtoPostfix() {
+async function InfixtoPostfix() {
 
     // Postfix array created
     var postfix = [];
@@ -71,19 +70,19 @@ function InfixtoPostfix() {
                 while (stackarr[topp] != "(") {
                     postfix[temp++] = popfunc();
                     popit();
-                    setTimeout(() => { console.log() }, 2000);
-
+                    await sleep(2000);
                 }
                 popfunc();
                 popit();
-                setTimeout(() => { console.log() }, 2000);
+                await sleep(2000);
+                
             }
 
             // Checking whether el is (  or not
             else if (el == '(') {
                 pushfunc(el);
                 pushit(el);
-                setTimeout(() => { console.log() }, 2000);
+                await sleep(2000);
 
             }
 
@@ -92,25 +91,24 @@ function InfixtoPostfix() {
             else if (precedency(el) > precedency(stackarr[topp])) {
                 pushfunc(el);
                 pushit(el);
-                setTimeout(() => { console.log() }, 2000);
+                await sleep(2000);
+                
 
 
-            }
-            else {
+            } else {
                 while (precedency(el) <=
                     precedency(stackarr[topp]) && topp > -1) {
                     postfix[temp++] = popfunc();
                     popit();
-                    setTimeout(() => { console.log() }, 2000);
+                    await sleep(2000); 
 
                 }
                 pushfunc(el);
                 pushit(el);
-                setTimeout(() => { console.log() }, 2000);
+                await sleep(2000);
 
             }
-        }
-        else {
+        } else {
             postfix[temp++] = el;
         }
     }
@@ -119,11 +117,11 @@ function InfixtoPostfix() {
     while (stackarr[topp] != '@') {
         postfix[temp++] = popfunc();
         popit();
-        setTimeout(() => { console.log() }, 2000);
+        await sleep(2000);
 
     }
     popit();
-    setTimeout(() => { console.log() }, 2000);
+    await sleep(2000);
 
 
     // String to store postfix expression
