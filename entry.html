@@ -1,64 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/home1.css">
-    <link rel="stylesheet" href="entry.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@600&display=swap" rel="stylesheet">
-    <title>Home Page</title>
+	<title>Login V2</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="assets/login/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="assets/login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/login/css/main.css">
+<!--===============================================================================================-->
 </head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background: black">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-26">
+						<h1>Stacks Demo</h1>
+					</span>
 
-<body style="background-color: black;">
-    
-<form action="home1.html">
-    <div  id="entry">
-        <div class="text-3d-5">STACKS</div>
-        <div id="buttons">
-            <label for="username">Name:</label><br>
-            <input type="name" class="textbox" name="username" pattern="^[^0-9]+$" id="username" autocomplete="off" required placeholder="Enter your name"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" class="textbox" name="email" id="email"  size="30" autocomplete="off" required placeholder="Enter your Email ID">
-            <br>
-             <!-- usage of regular expression pattern matching for email validation -->
-            <label for="confemail">Confirm Email:</label><br>
-            <input type="email" class="textbox" name="confemail"  pattern=".+@gmail\.com" id="confemail" autocomplete="off" required placeholder="Confirm your Email ID" onblur="confirmEmail()"><br>
-            <a href="home1.html"><button type="submit" class="button" >Proceed</button></a><br>
-            
-            <!-- #about -->
-            <div class="popup" onclick="about()">About!
-                <span class="popuptext" id="myPopup">Graphical representation of STACKS!!<br><a href="pushpopexp.html">Push and Pop</a> <br><a href="intopoexp.html">Infix to Postfix</a>
-                <br><a href="intopreexp.html">Infix to Prefix</a><br><a href="pretopostexp.html">Prefix to Postfix</a> <br>
-                </span>
-              </div>
-</form>
-              <script>
-              // When the user clicks on div, open the popup
-              function about() {
-                var popup = document.getElementById("myPopup");
-                popup.classList.toggle("show");
-              }
-              </script>
-                <!-- #email confiramtion -->
-                <script type="text/javascript">
-                function confirmEmail() {
-                var email = document.getElementById("email").value
-                var confemail = document.getElementById("confemail").value
-                if(email != confemail) {
-                alert('Email Not Matching!');
-                    }
-                }
-            </script>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="email" id="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
 
-        </div>
-    </div>
-</div>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="name" id="name">
+						<span class="focus-input100" data-placeholder="Name"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="assets/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="assets/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/login/js/main.js"></script>
 
 </body>
-
 </html>
