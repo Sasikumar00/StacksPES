@@ -16,7 +16,7 @@ reset.addEventListener('click', () => {
 })
 
 //PUSH OPERATION
-function pushit(e) {
+function pushit() {
     if ((divs.length) > 14) {
         alert("STACK IS FULL!!!");
     }
@@ -26,7 +26,7 @@ function pushit(e) {
         if (color == temp) {
             color++;
         }
-        container.innerHTML += `<div class="stack" id=${colorarr[color]}>${e}</div>`;
+        container.innerHTML += `<div class="stack" id=${colorarr[color]}>${randnum}</div>`;
         stack = Array.from(document.getElementsByClassName('stack'));
         gooback();
         temp = color;

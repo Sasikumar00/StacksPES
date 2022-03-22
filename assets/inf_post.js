@@ -1,5 +1,18 @@
 var stackarr = [];
-
+let ch=0;
+let pause=document.getElementById('pause');
+let play=document.getElementById('play');
+play.style.background='transparent';
+pause.addEventListener('click',()=>{
+    ch=1;
+    pause.style.background='transparent';
+    play.style.background='green';
+})
+play.addEventListener('click',()=>{
+    ch=0;
+    play.style.background='transparent';
+    pause.style.background='red';
+})
 // Variable topp initialized with -1
 var topp = -1;
 
@@ -70,19 +83,30 @@ async function InfixtoPostfix() {
                 while (stackarr[topp] != "(") {
                     postfix[temp++] = popfunc();
                     popit();
+                    while(ch==1){
+                        console.log('wait');
+                        await sleep(1000);
+                    }
                     await sleep(3000);
                     document.getElementById("post").value =(postfix.join(""));
                 }
                 popfunc();
                 popit();
+                while(ch==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
-                
             }
 
             // Checking whether el is (  or not
             else if (el == '(') {
                 pushfunc(el);
                 pushit(el);
+                while(ch==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
 
             }
@@ -92,6 +116,10 @@ async function InfixtoPostfix() {
             else if (precedency(el) > precedency(stackarr[topp])) {
                 pushfunc(el);
                 pushit(el);
+                while(ch==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
                 
 
@@ -101,12 +129,20 @@ async function InfixtoPostfix() {
                     precedency(stackarr[topp]) && topp > -1) {
                     postfix[temp++] = popfunc();
                     popit();
+                    while(ch==1){
+                        console.log('wait');
+                        await sleep(1000);
+                    }
                     await sleep(3000);
                     document.getElementById("post").value =(postfix.join(""));
 
                 }
                 pushfunc(el);
                 pushit(el);
+                while(ch==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
 
             }
@@ -120,6 +156,10 @@ async function InfixtoPostfix() {
     while (stackarr[topp] != '@') {
         postfix[temp++] = popfunc();
         popit();
+        while(ch==1){
+            console.log('wait');
+            await sleep(1000);
+        }
         await sleep(3000);
         document.getElementById("post").value =(postfix.join(""));
 

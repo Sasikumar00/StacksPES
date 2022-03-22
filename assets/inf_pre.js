@@ -1,3 +1,17 @@
+let chh=0;
+let pause=document.getElementById('pause');
+let play=document.getElementById('play');
+play.style.background='transparent';
+pause.addEventListener('click',()=>{
+    chh=1;
+    pause.style.background='transparent';
+    play.style.background='green';
+})
+play.addEventListener('click',()=>{
+    chh=0;
+    play.style.background='transparent';
+    pause.style.background='red';
+})
 // Infix to Prefix Conversion
 // Stack class to define a stack
 class Stack {
@@ -72,6 +86,10 @@ async function infixToPrefix(infix) {
         if (i == '(') {
             stackk.push(i);
             pushit(i);
+            while(chh==1){
+                console.log('wait');
+                await sleep(1000);
+            }
             await sleep(3000);
         }
 
@@ -83,6 +101,10 @@ async function infixToPrefix(infix) {
             while (stackk.top > -1 && ch != '(') {
                 prefix += stackk.pop();
                 popit();
+                while(chh==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
                 dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
@@ -106,12 +128,20 @@ async function infixToPrefix(infix) {
             while (stackk.top > -1 && (priority(i) <= priority(ch))) {
                 prefix += stackk.pop();
                 popit();
+                while(chh==1){
+                    console.log('wait');
+                    await sleep(1000);
+                }
                 await sleep(3000);
                 dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
             }
             stackk.push(i);
             pushit(i);
+            while(chh==1){
+                console.log('wait');
+                await sleep(1000);
+            }
             await sleep(3000);
         }
     }
@@ -121,6 +151,10 @@ async function infixToPrefix(infix) {
     while (stackk.top > -1) {
         prefix += stackk.pop();
         popit();
+        while(chh==1){
+            console.log('wait');
+            await sleep(1000);
+        }
         await sleep(3000);
         dataa.value = prefix;
     }
