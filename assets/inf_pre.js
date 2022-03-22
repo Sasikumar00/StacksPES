@@ -159,6 +159,15 @@ async function infixToPrefix(infix) {
         dataa.value = prefix;
     }
 
+    while((length1 - 1) > 0){
+        popit();
+        while(chh==1){
+            console.log('wait');
+            await sleep(1000);
+        }
+        await sleep(3000);
+    }
+
     
     // Return the reversed answer string
     dataa.value = prefix.split('').reverse().join('');
