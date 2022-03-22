@@ -105,7 +105,7 @@ function popit() {
         i = 0;
     }
     else {
-        alert("STACK IS EMPTY!!!\n PUSH ELEMENTS TO THE STACK");
+        //alert("STACK IS EMPTY!!!\n PUSH ELEMENTS TO THE STACK");
     }
 
 }
