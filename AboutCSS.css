@@ -1,0 +1,49 @@
+h1{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(26, 26, 26);
+    font-size: 70px;
+    text-align: center;
+    text-decoration: underline;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card{
+    margin: -30px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+}
+button{
+    border: none;
+    border-radius: 7px;
+    background-color: #1A1A1A;
+    color: white;
+    font-size: 150%;
+    cursor: pointer;
+    transition: all .3s ease;
+    padding: 10px;
+    width: 100px;
+}
+.card h1{
+    font-size: 40px;
+    text-decoration: none;
+}
+.card img{
+    width: 60%;
+}
+.card p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 130%;
+}
+.card span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 150%;
+}

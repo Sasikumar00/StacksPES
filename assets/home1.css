@@ -10,6 +10,30 @@
 #purpgrad{
     background-image: linear-gradient(#3800A0,#E860F0);
 }
+#heading{
+    position: relative;
+    display: flex;
+}
+#heading a{
+    text-decoration: none;
+    color: white;
+}
+#heading button{
+    position: absolute;
+    right: -100px;
+    width: 10%;
+    height: 50px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #000000;
+    transition: all .3s ease;
+}
+#heading button:hover{
+   transform: scale(1.08);
+   background-color: #2E2E2E;
+}
 video{
     position: absolute;
     z-index: -10;

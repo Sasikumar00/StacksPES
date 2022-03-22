@@ -5,7 +5,8 @@
 body{
     display: flex;
     justify-content: space-between;
-    background-image: url('/assets/pexels-nick-collins-3417418.jpg');
+    /* background-image: url('/assets/pexels-nick-collins-3417418.jpg'); */
+    background-color: #000000;
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -24,7 +25,7 @@ body{
 .navigation button{
     border: none;
     border-radius: 7px;
-    background-color: #163A74;
+    background-color: #434343;
     color: white;
     font-size: 170%;
     cursor: pointer;
@@ -32,7 +33,7 @@ body{
 }
 .navigation button:hover{
     transform: scale(1.02);
-    background-color: #102850;
+    background-color: #575757;
 }
 
 /*Properties for stack container*/
@@ -88,18 +89,18 @@ button{
 
 #push{
     border-radius: 5px;
-    background-color: #163A74;
+    background-color: #090909;
     color: rgb(255, 255, 255);
     border: none;
     outline: none;
     transition: all .2s ease;
     margin: 10px 0;
-    box-shadow: 2px 3px 10px rgb(33, 33, 33);
+    box-shadow: 2px 3px 10px rgb(0, 0, 0);
     cursor: pointer;
     transition: all .5s ease;
 }
 #push:hover{
-    background-color: #112b55;
+    background-color: #000000;
 }
 #push:active{
     transform: scale(0.94);
@@ -109,18 +110,18 @@ button{
 
 #pop{
     border-radius: 5px;
-    background-color: #163A74;
+    background-color: #090909;
     color: rgb(255, 255, 255);
     border: none;
     outline: none;
     transition: all .2s ease;
     margin: 10px 0;
-    box-shadow: 2px 3px 10px rgba(33, 33, 33, 0.796);
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.796);
     cursor: pointer;
     transition: all .5s ease;
 }
 #pop:hover{
-    background-color: #112b55;
+    background-color: #000000;
 }
 #pop:active{
     transform: scale(0.94);
@@ -134,7 +135,7 @@ button{
     right: 10%;
     width: 30%;
     height: 40%;
-    background: transparent;
+    background-color: #1a1a1a;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
