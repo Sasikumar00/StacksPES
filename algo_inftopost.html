@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix to postfix algorithm</title>
+    <style>
+        h1{
+            text-align: center;
+            font-style: italic;
+            font-family: serif;
+            background: -webkit-linear-gradient(#0667b6,#05e8ba);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 45px;
+            margin-top: 40px;
+            
+
+        }
+        #head{
+            text-align: center;
+            font-style: italic;
+            font-family: serif;
+            background: -webkit-linear-gradient(#0667b6,#05e8ba);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 38px;
+            margin-top: 40px;
+
+        }
+        body{
+            background: linear-gradient(#f8d1d6,#8fe5f5);
+        }
+       
+     
+        p{
+            text-align: justify;
+            font-size: 20px;
+        }
+        #box{
+            position: relative;
+    margin-top: 70px;
+    margin-left: 18%;
+    width: 60pc;
+    height: 84pc;
+    background: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+   box-shadow: 0px 0px 20px 5px rgb(9, 9, 9);
+        }
+        
+
+        #push{
+    border-radius: 5px;
+    background-color: #163A74;
+    font-size: large;
+    color: whitesmoke;
+    
+    margin-top: 50px;
+    margin-left: 42%;
+    box-shadow: 2px 3px 10px rgb(33, 33, 33);
+    cursor: pointer;
+    width: 265px;
+    height: 70px;
+    margin-bottom: 40px;
+    
+}
+
+#push:active{
+    transform: scale(0.94);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+    <h1>INFIX EXPRESSION</h1>
+ 
+        <p>When the operator is written in between the operands, then it is known as infix notation. 
+            Operand does not have to be always a constant or a variable; it can also be an expression itself.</p>
+      
+        <p><b>For example,</b><br>
+
+            (p + q) * (r + s)</p>
+             <p><b>Syntax of infix notation is given below:</b><br>
+
+                < operand > < operator > < operand > </p>
+        
+        <h1>POSTFIX EXPRESSION</h1>
+
+         <p>The postfix expression is an expression in which the operator is written after the operands.</p>
+      
+        <p><b>For example,</b><br>
+
+            pq+ rs+ *</p>
+             <p><b>Syntax of postfix notation is given below:</b><br>
+
+                < operand > < operand > < operator > </p>
+        
+        <h1 id="head">ALGORITHM FOR INFIX TO POSTFIX EXPRESSION</h1>
+       <p> Let, X is an arithmetic expression written in infix notation. This algorithm finds the equivalent postfix expression Y.<br><br>
+<b>Step 1:</b> Start<br>
+<b>Step 2:</b> Push "("onto Stack, and add ")" to the end of X.<br>
+<b>Step 3:</b> Scan X from left to right and repeat Step 3 to 6 for each element of X until the Stack is empty.<br>
+<b>Step 4:</b> If an operand is encountered, add it to Y.<br>
+<b>Step 5:</b>If a left parenthesis is encountered, push it onto Stack.<br>
+<b>Step 6:</b>If an operator is encountered ,then:<br>
+     1. Repeatedly pop from Stack and add to Y each operator (on the top of Stack) which has the same precedence as or higher precedence than operator.<br>
+     2.Add operator to Stack.<br>
+[End of If]<br>
+<b>Step 7:</b>If a right parenthesis is encountered ,then:<br>
+1. Repeatedly pop from Stack and add to Y each operator (on the top of Stack) until a left parenthesis is encountered.<br>
+2, Remove the left Parenthesis.<br>
+[End of If]<br>
+[End of If]<br>
+<b>Step 8:</b>END.</p>
+    </div>
+
+    <div>
+        
+        <button id="push">APPLICATION PAGE</button>
+    </div>
+</body>
+</html>

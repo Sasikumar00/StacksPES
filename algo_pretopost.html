@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefix to postfix algorithm</title>
+    <style>
+        h1{
+            text-align: center;
+            font-style: italic;
+            font-family: serif;
+            background: -webkit-linear-gradient(#0667b6,#05e8ba);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 45px;
+            margin-top: 40px;
+            
+
+        }
+        #head{
+            text-align: center;
+            font-style: italic;
+            font-family: serif;
+            background: -webkit-linear-gradient(#0667b6,#05e8ba);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 38px;
+            margin-top: 40px;
+
+        }
+        body{
+            background: linear-gradient(#f8d1d6,#8fe5f5);
+        }
+       
+     
+        p{
+            text-align: justify;
+            font-size: 20px;
+        }
+        #box{
+            position: relative;
+    margin-top: 70px;
+    margin-left: 18%;
+    width: 60pc;
+    height: 75pc;
+    background: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+   box-shadow: 0px 0px 20px 5px rgb(9, 9, 9);
+        }
+        
+
+        #push{
+    border-radius: 5px;
+    background-color: #163A74;
+    font-size: large;
+    color: whitesmoke;
+    
+    margin-top: 50px;
+    margin-left: 42%;
+    box-shadow: 2px 3px 10px rgb(33, 33, 33);
+    cursor: pointer;
+    width: 265px;
+    height: 70px;
+    margin-bottom: 40px;
+    
+}
+
+#push:active{
+    transform: scale(0.94);
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>PREFIX EXPRESSION</h1>
+
+        <p>The prefix expression is an expression in which the operator is written before the operands.</p>
+     
+       <p><b>For example,</b><br>
+
+           * +pq +rs </p>
+            <p><b>Syntax of prefix notation is given below:</b><br>
+
+               < operator > < operand > < operand > </p>
+        
+        <h1>POSTFIX EXPRESSION</h1>
+
+         <p>The postfix expression is an expression in which the operator is written after the operands.</p>
+      
+        <p><b>For example,</b><br>
+
+            pq+ rs+ *</p>
+             <p><b>Syntax of postfix notation is given below:</b><br>
+
+                < operand > < operand > < operator > </p>
+        
+        <h1 id="head">ALGORITHM FOR PREFIX TO POSTFIX EXPRESSION</h1>
+       <p> Let, Q be the arithematic expression written in prefix notation. P is the postfix notation.<br><br>
+<b>Step 1:</b> Start<br>
+<b>Step 2:</b> Reverse the contents of Q<br>
+<b>Step 3:</b> Scan Q from left to right and repeat steps 4 to 5 until Q is completely scanned.<br>
+<b>Step 4:</b> If the symbol is an operator,<br>
+A. Pop the top element from the stack and store it in operator 1.<br>
+B. Pop the next top element from the stack and store it in operator 2.<br>
+C. Copy operator 1 into P and add operator 2 into P.<br>
+D. Join symbol into P.<br>
+E. Push P into stack.<br>
+<b>Step 5:</b>If it is not an operator<br>
+A. Push symbol into stack.<br>
+
+<b>Step 6:</b>END.</p>
+    </div>
+
+    <div>
+        
+        <button id="push">APPLICATION PAGE</button>
+    </div>
+</body>
+</html>
