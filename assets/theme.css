@@ -183,3 +183,19 @@ button{
     background-color: green;
     border: 3px solid green;
 }
+#algo{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #434343;
+    border: none;
+    border-radius: 5px;
+}
+#algo a{
+    color: white;
+    text-decoration: none;
+}
+#algo:hover{
+    transform: scale(1.02);
+    background-color: #575757;
+}
