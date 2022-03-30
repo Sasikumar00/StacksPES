@@ -11,9 +11,10 @@ let body = document.getElementById('body');
 let reset = document.getElementById('reset');
 
 //RESET
-reset.addEventListener('click', () => {
-    container.innerHTML = "";
-})
+function reload() {
+    reload = location.reload();
+}
+reset.addEventListener('click', reload, false)
 
 //PUSH OPERATION
 function pushit(e) {

@@ -1,16 +1,16 @@
-let chh=0;
-let pause=document.getElementById('pause');
-let play=document.getElementById('play');
-play.style.background='transparent';
-pause.addEventListener('click',()=>{
-    chh=1;
-    pause.style.background='transparent';
-    play.style.background='green';
+let chh = 0;
+let pause = document.getElementById('pause');
+let play = document.getElementById('play');
+play.style.background = 'transparent';
+pause.addEventListener('click', () => {
+    chh = 1;
+    pause.style.background = 'transparent';
+    play.style.background = 'green';
 })
-play.addEventListener('click',()=>{
-    chh=0;
-    play.style.background='transparent';
-    pause.style.background='red';
+play.addEventListener('click', () => {
+    chh = 0;
+    play.style.background = 'transparent';
+    pause.style.background = 'red';
 })
 // Infix to Prefix Conversion
 // Stack class to define a stack
@@ -85,11 +85,11 @@ async function infixToPrefix(infix) {
         // If character is '(' push it to stack
         if (i == '(') {
             stackk.push(i);
-            pushit(i);
-            while(chh==1){
+            while (chh == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
+            pushit(i);
             await sleep(3000);
         }
 
@@ -100,11 +100,11 @@ async function infixToPrefix(infix) {
             ch = stackk.stack[stackk.top];
             while (stackk.top > -1 && ch != '(') {
                 prefix += stackk.pop();
-                popit();
-                while(chh==1){
+                while (chh == 1) {
                     console.log('wait');
                     await sleep(1000);
                 }
+                popit();
                 await sleep(3000);
                 dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
@@ -127,21 +127,21 @@ async function infixToPrefix(infix) {
             ch = stackk.stack[stackk.top];
             while (stackk.top > -1 && (priority(i) <= priority(ch))) {
                 prefix += stackk.pop();
-                popit();
-                while(chh==1){
+                while (chh == 1) {
                     console.log('wait');
                     await sleep(1000);
                 }
+                popit();
                 await sleep(3000);
                 dataa.value = prefix;
                 ch = stackk.stack[stackk.top];
             }
             stackk.push(i);
-            pushit(i);
-            while(chh==1){
+            while (chh == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
+            pushit(i);
             await sleep(3000);
         }
     }
@@ -150,30 +150,30 @@ async function infixToPrefix(infix) {
     // the stack and add it to answer string
     while (stackk.top > -1) {
         prefix += stackk.pop();
-        popit();
-        while(chh==1){
+        while (chh == 1) {
             console.log('wait');
             await sleep(1000);
         }
+        popit();
         await sleep(3000);
         dataa.value = prefix;
     }
 
-    while((length1 - 1) > 0){
-        popit();
-        while(chh==1){
+    while ((length1 - 1) > 0) {
+        while (chh == 1) {
             console.log('wait');
             await sleep(1000);
         }
+        popit();
         await sleep(3000);
     }
 
-    
+
     // Return the reversed answer string
     dataa.value = prefix.split('').reverse().join('');
 }
 
-function start_conversion(){
+function start_conversion() {
     let data = document.getElementById("num").value;
     // infixToPrefix(data);
     console.log(infixToPrefix(data));

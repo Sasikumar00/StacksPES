@@ -1,16 +1,16 @@
-let ch=0;
-let pause=document.getElementById('pause');
-let play=document.getElementById('play');
-play.style.background='transparent';
-pause.addEventListener('click',()=>{
-    ch=1;
-    pause.style.background='transparent';
-    play.style.background='green';
+let ch = 0;
+let pause = document.getElementById('pause');
+let play = document.getElementById('play');
+play.style.background = 'transparent';
+pause.addEventListener('click', () => {
+    ch = 1;
+    pause.style.background = 'transparent';
+    play.style.background = 'green';
 })
-play.addEventListener('click',()=>{
-    ch=0;
-    play.style.background='transparent';
-    pause.style.background='red';
+play.addEventListener('click', () => {
+    ch = 0;
+    play.style.background = 'transparent';
+    pause.style.background = 'red';
 })
 // function to check if character
 // is operator or not
@@ -45,19 +45,19 @@ async function preToPost(pre_exp) {
             // pop two operands from stack
             let op1 = s[s.length - 1];
             s.pop();
-            popit();
-            while(ch==1){
+            while (ch == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
+            popit();
             await sleep(3000);
             let op2 = s[s.length - 1];
             s.pop();
-            popit();
-            while(ch==1){
+            while (ch == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
+            popit();
             await sleep(3000);
 
             // concat the operands and operator
@@ -65,12 +65,12 @@ async function preToPost(pre_exp) {
 
             // Push String temp back to stack
             s.push(temp);
-            pushit(temp);
-            while(ch==1){
+            while (ch == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
-            document.getElementById("pre").value =  (s.join(""));
+            pushit(temp);
+            document.getElementById("pre").value = (s.join(""));
             await sleep(3000);
 
         }
@@ -79,11 +79,11 @@ async function preToPost(pre_exp) {
         else {
             // push the operand to the stack
             s.push(pre_exp[i] + "");
-            pushit(pre_exp[i]);
-            while(ch==1){
+            while (ch == 1) {
                 console.log('wait');
                 await sleep(1000);
             }
+            pushit(pre_exp[i]);
             document.getElementById("pre").value = (s.join(""));
             await sleep(3000);
 
@@ -91,12 +91,12 @@ async function preToPost(pre_exp) {
     }
 
     // stack contains only the Postfix expression
-    
-    popit();
-    while(ch==1){
+
+    while (ch == 1) {
         console.log('wait');
         await sleep(1000);
     }
+    popit();
     document.getElementById("pre").value = (s[s.length - 1]);
     await sleep(3000);
 }
