@@ -13,24 +13,34 @@
 #heading{
     position: relative;
     display: flex;
+    width: 100vw;
 }
 #heading a{
     text-decoration: none;
     color: white;
 }
-#heading button{
+.head-btn{
     position: absolute;
-    right: -100px;
-    width: 10%;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}
+.head-btn button{
+    margin: 0 10px;
+    width: 100px;
     height: 50px;
     font-size: 18px;
-    margin: 10px;
     border-radius: 5px;
     border: none;
     background-color: #000000;
     transition: all .3s ease;
 }
-#heading button:hover{
+.head-btn button:hover{
    transform: scale(1.08);
    background-color: #2E2E2E;
 }
