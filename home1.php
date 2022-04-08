@@ -27,7 +27,7 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body>
-    <div id="heading">
+    <div id="heading">  
         <center>Graphical Representation Of Stack Operations</center>
         <div class="head-btn">
             <button><a href="./About.html">About</a></button>
@@ -56,7 +56,7 @@ if (isset($_GET['logout'])) {
                 <a href="algo_inftopost.html"><button class="button">Infix to PostFix</button></a>
                 <a href="algo_inftopre.html"><button class="button">Infix to Prefix</button></a>
                 <a href="algo_pretopost.html"><button class="button">Prefix to Postfix</button></a>
-                <a href="feedback.html"><button class="button">Feedback</button></a>
+                <a href="feedback.php"><button class="button">Feedback</button></a>
             </div>
         </div>
     </div>

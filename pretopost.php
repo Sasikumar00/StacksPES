@@ -27,7 +27,7 @@ check_login();
 </head>
 <body>
     <div class="navigation">
-        <a href="/home1.html"><button>Back</button></a>
+        <a href="/home1.php"><button>Back</button></a>
         <button id="reset">Reset</button>
     </div>
     <div id="container">
