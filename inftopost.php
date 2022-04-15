@@ -24,7 +24,7 @@ if (isset($_GET['infixvalue'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/theme.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -63,8 +63,8 @@ if (isset($_GET['infixvalue'])) {
             </script>";
     }
     ?>
-    <script src="./assets/inf_post.js"></script>
-    <script src="./assets/pushpopgeneralpurpose.js"></script>
+    <script src="./assets/js/inf_post.js"></script>
+    <script src="./assets/js/pushpopgeneralpurpose.js"></script>
     <script src="./assets/js/php_load.js"></script>
 </body>
 
