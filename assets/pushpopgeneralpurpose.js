@@ -5,6 +5,8 @@ let temp;
 let divs = document.getElementById('container').childNodes;
 let length1;
 let length2;
+var timeout;
+let i = 0;
 //let push = document.getElementById('push');
 let container = document.getElementById('container');
 let body = document.getElementById('body');
@@ -14,7 +16,7 @@ let reset = document.getElementById('reset');
 function reload() {
     reload = location.reload();
 }
-reset.addEventListener('click', reload, false)
+reset.addEventListener('click', reload, false);
 
 //PUSH OPERATION
 function pushit(e) {
@@ -43,7 +45,7 @@ function pushit(e) {
 
 
 stack = Array.from(document.getElementsByClassName('stack'));
-let timeout;
+
 function gooback() {
     timeout = setTimeout(goback, 600);
 }
@@ -56,7 +58,7 @@ function goback() {
 //Stack hover effect open
 
 
-let i = 0;
+
 function stackanimateopen() {
     stack.forEach(ele => {
         let move = i * 35

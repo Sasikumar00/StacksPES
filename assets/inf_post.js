@@ -65,13 +65,13 @@ function precedency(pre) {
 }
 
 // Function to convert Infix to Postfix
-async function InfixtoPostfix() {
+async function InfixtoPostfix(infixval) {
 
     // Postfix array created
     var postfix = [];
     var temp = 0;
     pushfunc('@');
-    infixval = document.getElementById("infixvalue").value;
+    // infixval = document.getElementById("infixvalue").value;
 
     // Iterate on infix string
     for (var i = 0; i < infixval.length; i++) {

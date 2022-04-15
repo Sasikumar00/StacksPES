@@ -16,3 +16,4 @@ function logout(){
     header("location: entry.php");
     die;
 }
+

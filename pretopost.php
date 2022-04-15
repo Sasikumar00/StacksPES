@@ -1,9 +1,20 @@
-<?php 
+<?php
 
 include("php_functions.php");
+include("connection.php");
 session_start();
 check_login();
 
+//prevent repeated execution
+
+if (isset($_GET['prefixvalue'])) {
+    $prefixvalue = $_GET['prefixvalue'];
+    //add slashes to the input
+    $prefixvalue = addslashes($prefixvalue);
+    $user_id = $_SESSION['user_id'];
+    $sql = "INSERT INTO prefixtopost (user_id, prefixvalue) VALUES ('$user_id', '$prefixvalue')";
+    $result = mysqli_query($con, $sql);
+}
 
 ?>
 
@@ -20,15 +31,16 @@ check_login();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Practise</title>
     <style>
-        .stack{
+        .stack {
             font-size: 60px;
         }
     </style>
 </head>
+
 <body>
     <div class="navigation">
         <a href="/home1.php"><button>Back</button></a>
-        <button id="reset">Reset</button>
+        <a href="/pretopost.php"><button>Reset</button></a>
     </div>
     <div id="container">
     </div>
@@ -38,12 +50,27 @@ check_login();
             <button id="play">Play</button>
         </div>
         <div class="buttons">
-            <input type="text" name="num" id="num" placeholder="Enter the Prefix Expression">
-            <input type="text" name="pre" id="pre" placeholder="Postfix Expression">
-            <button id="push" onclick="//start_conversion()">Evaluate</button>
+            <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="get">
+                <input type="text" name="prefixvalue" id="num" placeholder="Enter the Prefix Expression">
+                <input type="text" name="pre" id="pre" placeholder="Postfix Expression">
+                <!-- <button id="push" onclick="start_conversion()">Evaluate</button> -->
+                <input type="submit" value="Evaluate" id="push"></input>
+            </form>
         </div>
     </div>
     <button id="algo"><a href="./algo_pretopost.html">Algorithm</a></button>
+    <?php
+    if (isset($_GET['prefixvalue'])) {
+        echo "<script>
+              document.addEventListener(\"DOMContentLoaded\", function(event) {
+                var prefixvaluee = '" . $_GET['prefixvalue'] . "';
+                var prefix = document.getElementById('num');
+                prefix.value = prefixvaluee;
+                start_conversion();
+               });
+            </script>";
+    }
+    ?>
     <script src="assets/pushpopgeneralpurpose.js"></script>
     <script src="assets/pre_post.js"></script>
 
