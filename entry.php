@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-
+error_reporting(E_ALL ^ E_WARNING);
 include("connection.php");
 //check if the data exists in database
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -11,17 +11,26 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$password = $_POST['email'];
 	//add slashes to prevent sql injection
 	$password = addslashes($password);
-	$sql = "SELECT * FROM users WHERE name='$username' AND email='$password'";
+	$sql = "SELECT * FROM users WHERE email='$password'";
 	$result = mysqli_query($con,$sql);
 	$row = mysqli_fetch_array($result);
-	if($row['name']==$username && $row['email']==$password){
+	if($row['email']==$password){
 		$_SESSION['user_id'] = $row['user_id'];
 		$_SESSION['userName'] = $row['name'];
 		header("location: home1.php");
 		die;
 	}
 	else{
-		echo "<script>alert(\"Incorrect username or password\")</script>";
+		//insert the data into database and login
+		$sql = "INSERT INTO users (name, email) VALUES ('$username', '$password')";
+		$result = mysqli_query($con,$sql);
+		$sql = "SELECT * FROM users WHERE email='$password'";
+		$result = mysqli_query($con,$sql);
+		$row = mysqli_fetch_array($result);
+		$_SESSION['user_id'] = $row['user_id'];
+		$_SESSION['userName'] = $row['name'];
+		header("location: home1.php");
+		die;
 	}
 }
 
