@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-error_reporting(E_ALL ^ E_WARNING);
+// error_reporting(E_ALL ^ E_WARNING);
 include("connection.php");
 //check if the data exists in database
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -17,6 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	if($row['email']==$password){
 		$_SESSION['user_id'] = $row['user_id'];
 		$_SESSION['userName'] = $row['name'];
+		$_SESSION['userEmail'] = $row['email'];
 		header("location: home1.php");
 		die;
 	}

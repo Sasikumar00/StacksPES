@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include("php_functions.php");
 session_start();
@@ -27,11 +27,11 @@ if (isset($_GET['logout'])) {
 </head>
 
 <body>
-    <div id="heading">  
+    <div id="heading">
         <center>Graphical Representation Of Stack Operations</center>
         <div class="head-btn">
             <button><a href="./About.html">About</a></button>
-            <button><a href="<?php echo $_SERVER['PHP_SELF']."?logout=1"?>">Log out</a></button>
+            <button><a href="<?php echo $_SERVER['PHP_SELF'] . "?logout=1" ?>">Log out</a></button>
         </div>
     </div>
     <div class="main-wrap">
@@ -51,7 +51,7 @@ if (isset($_GET['logout'])) {
         </div>
         <div class="operat">
             <div class="buttons">
-                <center style="font-size: 30px; margin: 0;">Welcome,<?php echo $_SESSION['userName'];?></center>
+                <center style="font-size: 30px; margin: 0;">Welcome,<?php echo $_SESSION['userName']; ?></center>
                 <a href="algo_pushtopop.html"><button class="button">Push and Pop</button></a>
                 <a href="algo_inftopost.html"><button class="button">Infix to PostFix</button></a>
                 <a href="algo_inftopre.html"><button class="button">Infix to Prefix</button></a>
@@ -62,6 +62,14 @@ if (isset($_GET['logout'])) {
     </div>
     <video id="myvideo" src="assets/img_vid/Pexels Videos 2439510.mp4" autoplay loop muted></video>
     <script src="assets/js/homescript.js"></script>
+    <?php
+
+    if (isset($_GET['feedback'])) {
+        if ($_GET['feedback'] == "success") {
+            echo "<script>alert('Feedback submitted successfully!')</script>";
+        }
+    }
+    ?>
 </body>
 
 </html>
