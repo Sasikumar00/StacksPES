@@ -107,11 +107,11 @@ if (isset($_POST['user_id'])) {
         </form>
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-9 text-center">                
-                <?php if ($_POST['operation_type'] == "inftopost") {
+                <?php if (@$_POST['operation_type'] == "inftopost") {
                     echo "<p style=\"font-size: 30px;\">Infix To Postfix data</p>";
-                } elseif ($_POST['operation_type'] == "inftopre") {
+                } elseif (@$_POST['operation_type'] == "inftopre") {
                     echo "<p style=\"font-size: 30px;\">Infix To Prefix data</p>";
-                } elseif ($_POST['operation_type'] == "pretopost") {
+                } elseif (@$_POST['operation_type'] == "pretopost") {
                     echo "<p style=\"font-size: 30px;\">Prefix To Postfix data</p>";
                 } ?>
             </div>
