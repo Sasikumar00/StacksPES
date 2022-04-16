@@ -54,13 +54,8 @@ if (isset($_GET['NAME'])) {
             <h1>Feedback Form</h1>
             <input type="text" name="NAME" id="name" placeholder="Enter your name">
             <input type="email" name="EMAIL" id="email" placeholder="Enter your email address">
-<<<<<<< HEAD
             <textarea name="MESSAGE" id="message" placeholder="Enter your message here"></textarea>
             <input type="submit" value="submit" id="submit"></input>
-=======
-            <input name="MESSAGE" id="message" placeholder="Enter your message here"></input>
-            <input type="submit" value="submit" id="submit"></input>
->>>>>>> 4922306d916c01ecf0805855caa86a93255b78da
         </form>
         <script>
             <?php

@@ -3,7 +3,7 @@
 //connection to the data base
 $servername = "localhost";
 $dbusername = "root";
-$dbpassword = "Alphacentauri12";
+$dbpassword = "";
 $dbname = "stacks";
 
 $con = mysqli_connect($servername,$dbusername,$dbpassword,$dbname);
