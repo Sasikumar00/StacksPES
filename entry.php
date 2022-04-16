@@ -28,7 +28,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		header("location: home1.php");
 		die;
 	}
-	}
 	else{
 		//insert the data into database and login
 		$sql = "INSERT INTO users (name, email) VALUES ('$username', '$password')";
