@@ -46,7 +46,7 @@ if (isset($_GET['NAME'])) {
 
 <body>
     <div class="navigation">
-        <a href="/home1.php"><button>Back</button></a>
+        <a href="./home1.php"><button>Back</button></a>
     </div>
     <h1 id="heading">Have any suggestions? Reach out to us</h1>
     <div class="container">
@@ -54,7 +54,7 @@ if (isset($_GET['NAME'])) {
             <h1>Feedback Form</h1>
             <input type="text" name="NAME" id="name" placeholder="Enter your name">
             <input type="email" name="EMAIL" id="email" placeholder="Enter your email address">
-            <input name="MESSAGE" id="message" placeholder="Enter your message here"></input>
+            <textarea name="MESSAGE" id="message" placeholder="Enter your message here"></textarea>
             <input type="submit" value="submit" id="submit"></input>
         </form>
         <script>

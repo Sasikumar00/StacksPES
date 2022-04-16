@@ -39,7 +39,7 @@ if (isset($_GET['prefixvalue'])) {
 
 <body>
     <div class="navigation">
-        <a href="/home1.php"><button>Back</button></a>
+        <a href="./home1.php"><button>Back</button></a>
         <a href="/pretopost.php"><button>Reset</button></a>
     </div>
     <div id="container">
