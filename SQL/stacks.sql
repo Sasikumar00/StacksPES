@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2022 at 01:17 PM
+-- Generation Time: Apr 16, 2022 at 01:22 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -60,7 +60,10 @@ INSERT INTO `infixtopost` (`index`, `user_id`, `infixvalue`, `timestamp`) VALUES
 (33, 1, 'A+C+B', '2022-04-15 11:52:33'),
 (34, 1, 'A+C+B', '2022-04-15 11:53:23'),
 (35, 1, 'a+b*c-(d/e+f*g*h)', '2022-04-15 11:54:14'),
-(36, 2, 'a+b*c-(d/e+f*g*h)', '2022-04-15 16:35:38');
+(36, 2, 'a+b*c-(d/e+f*g*h)', '2022-04-15 16:35:38'),
+(37, 3, 'a+b*c-(d/e+f*g*h)', '2022-04-15 21:08:45'),
+(38, 1, 'A+B+C+D', '2022-04-16 16:48:43'),
+(39, 1, '(A + B) * (C + D)', '2022-04-16 16:49:50');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,8 @@ CREATE TABLE `infixtopre` (
 INSERT INTO `infixtopre` (`index`, `user_id`, `infixvalue`, `timestamp`) VALUES
 (2, 1, 'a+b*c-(d/e+f*g*h)', '2022-04-15 15:32:16'),
 (3, 1, 'a+b*c-(d/e+f*g*h)', '2022-04-15 15:33:35'),
-(4, 1, 'A+C+B', '2022-04-15 15:37:34');
+(4, 1, 'A+C+B', '2022-04-15 15:37:34'),
+(5, 3, 'a+b*c-(d/e+f*g*h)', '2022-04-16 16:06:38');
 
 -- --------------------------------------------------------
 
@@ -124,7 +128,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `timestamp`) VALUES
 (1, 'karthik sarode', 'karthik.sarode23@gmail.com', '2022-04-05'),
-(2, 'Sasikumar', 'sasikumar@gmail.com', '2022-04-15');
+(2, 'Sasikumar', 'sasikumar@gmail.com', '2022-04-15'),
+(3, 'narayana', 'narayana@gmail.com', '2022-04-15'),
+(4, 'Lakshmi', 'sblakshmisarode@live.com', '2022-04-16'),
+(5, 'profess', 'profnewbtube@gmail.com', '2022-04-16');
 
 --
 -- Indexes for dumped tables
@@ -163,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `infixtopost`
 --
 ALTER TABLE `infixtopost`
-  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `infixtopre`
 --
 ALTER TABLE `infixtopre`
-  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `prefixtopost`
@@ -181,7 +188,7 @@ ALTER TABLE `prefixtopost`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
