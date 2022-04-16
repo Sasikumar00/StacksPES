@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-body{
+
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -13,15 +14,17 @@ body{
     background-color: #000000;
     overflow: hidden;
 }
-#heading{
+
+#heading {
     color: white;
     font-family: 'Montserrat', sans-serif;
     margin-bottom: 30px;
     /* font-size: 150%; */
 }
+
 /*Properties for navigation*/
 
-.navigation{
+.navigation {
     display: flex;
     justify-content: space-between;
     width: 100vw;
@@ -29,7 +32,8 @@ body{
     top: 5%;
     left: 3%;
 }
-.navigation button{
+
+.navigation button {
     border: none;
     padding: 10px 15px;
     border-radius: 7px;
@@ -39,14 +43,15 @@ body{
     cursor: pointer;
     transition: all .3s ease;
 }
-.navigation button:hover{
+
+.navigation button:hover {
     transform: scale(1.02);
     background-color: #333333;
 }
 
 /*Properties main box*/
 
-.container{
+.container {
     font-family: 'Montserrat', sans-serif;
     width: 30%;
     height: 420px;
@@ -54,11 +59,14 @@ body{
     border-radius: 7px;
     background-color: white;
 }
-.container h1{
+
+.container h1 {
     color: black;
     margin: 10px;
 }
-.container input{
+
+.container input {
+    font-family: 'Montserrat', sans-serif;
     font-size: 100%;
     width: 70%;
     padding: 10px 5px;
@@ -67,16 +75,27 @@ body{
     margin: 10px 0px;
     border: 2px solid rgb(65, 64, 64);
 }
-#message{
-    height: 100px;
+
+.container textarea {
+    font-family: 'Montserrat', sans-serif;
+    width: 73%;
+    height: 150px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    border: 2px solid rgb(65, 64, 64);
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
 }
-.container form{
+
+.container form {
     padding: 5px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-form button{
+
+form button {
     padding: 10px 15px;
     font-size: 130%;
     margin-top: 20px;
@@ -88,10 +107,12 @@ form button{
     background-size: 300% 100%;
     transition: all .3s ease-in-out;
 }
+
 button:hover {
     background-position: 100% 0;
     cursor: pointer;
 }
-button:active{
+
+button:active {
     transform: scale(0.97);
 }

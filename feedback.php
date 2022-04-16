@@ -32,7 +32,7 @@ check_login();
             <h1>Feedback Form</h1>
             <input type="text" name="NAME" id="name" placeholder="Enter your name">
             <input type="email" name="EMAIL" id="email" placeholder="Enter your email address">
-            <input name="MESSAGE" id="message" placeholder="Enter your message here"></input>
+            <textarea name="MESSAGE" id="message" placeholder="Enter your message here"></textarea>
             <button id="submit">SUBMIT</button>
         </form>
     </div>
