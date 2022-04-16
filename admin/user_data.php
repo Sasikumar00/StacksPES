@@ -1,16 +1,18 @@
 <?php
 
+
 include("../connection.php");
 include("../php_functions.php");
 session_start();
 check_login_admin();
 
-//get feedback data from the database
-$sql = "SELECT * FROM feedback";
+//get user data from the database
+$sql = "SELECT * FROM users";
 $result = mysqli_query($con, $sql);
 
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +22,11 @@ $result = mysqli_query($con, $sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-    <title>FeedBack Data</title>
+    <title>USER Data</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="./admin.php">Stacks</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,11 +37,11 @@ $result = mysqli_query($con, $sql);
                 <li class="nav-item">
                     <a class="nav-link" href="./admin.php">Admin Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="./user_data.php">User Data</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="./feedback_data.php">Feedback Data</a>
+                <li class="nav-item">
+                <a class="nav-link" href="./feedback_data.php">Feedback Data</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./user_op.php">User Operations</a>
@@ -51,7 +53,7 @@ $result = mysqli_query($con, $sql);
         </div>
     </nav>
     <div class="jumbotron text-center" style="width: 100%;">
-        <h1>FEEDBACK DASHBOARD</h1>
+        <h1>User DASHBOARD</h1>
     </div>
     <div class="container">
         <div class="row">
@@ -62,10 +64,10 @@ $result = mysqli_query($con, $sql);
                 <h4>Email</h4>
             </div>
             <div class="col-4" style="border: 2px black solid;">
-                <h4>Message</h4>
+                <h4>user ID</h4>
             </div>
             <div class="col-2" style="border: 2px black solid;">
-                <h4>Date</h4>
+                <p style="font-size: large; font-weight: 500;">Register Date</p>
             </div>
         </div>
         <?php
@@ -78,7 +80,7 @@ $result = mysqli_query($con, $sql);
             echo $row['email'];
             echo  '</div>';
             echo  '<div class="col-4" style="border: 2px black solid;">';
-            echo  $row['message'];
+            echo  $row['user_id'];
             echo  '</div>';
             echo  '<div class="col-2" style="border: 2px black solid;">';
             echo  $row['timestamp'];

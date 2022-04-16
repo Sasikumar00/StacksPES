@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-// error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_WARNING);
 include("connection.php");
 //check if the data exists in database
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -14,12 +14,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$sql = "SELECT * FROM users WHERE email='$password'";
 	$result = mysqli_query($con,$sql);
 	$row = mysqli_fetch_array($result);
-	if($row['email']==$password){
+	if($password=="Admin9845" && $username=="Admin"){
+		$_SESSION['user_id'] = 9845;
+		$_SESSION['userName'] = "Admin";
+		$_SESSION['userEmail'] = "Admin9845@localhost.com";
+		header("location: ./admin/admin.php");
+		die;
+	}
+	else if($row['email']==$password){
 		$_SESSION['user_id'] = $row['user_id'];
 		$_SESSION['userName'] = $row['name'];
 		$_SESSION['userEmail'] = $row['email'];
 		header("location: home1.php");
 		die;
+	}
 	}
 	else{
 		//insert the data into database and login
