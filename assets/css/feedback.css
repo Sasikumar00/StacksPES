@@ -76,7 +76,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
-form button{
+form #submit{
     padding: 10px 15px;
     font-size: 130%;
     margin-top: 20px;
@@ -88,10 +88,10 @@ form button{
     background-size: 300% 100%;
     transition: all .3s ease-in-out;
 }
-button:hover {
+#submit:hover {
     background-position: 100% 0;
     cursor: pointer;
 }
-button:active{
+#submit:active{
     transform: scale(0.97);
 }
