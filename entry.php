@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	$sql = "SELECT * FROM users WHERE email='$password'";
 	$result = mysqli_query($con,$sql);
 	$row = mysqli_fetch_array($result);
-	if($password=="Admin9845" && $username=="Admin"){
+	if($password=="Admin9845@localhost.com" && $username=="Admin"){
 		$_SESSION['user_id'] = 9845;
 		$_SESSION['userName'] = "Admin";
 		$_SESSION['userEmail'] = "Admin9845@localhost.com";

@@ -18,7 +18,7 @@ if (isset($_POST['user_id'])) {
         $result = mysqli_query($con, $sql);
         //check result if no data alert user does not have any data
         if (mysqli_num_rows($result) == 0) {
-            echo "<script>alert('user does not have any data in the database');</script>";
+            echo "<script>alert('user does not have any data in the database for this operation');</script>";
             unset($result);
         }
     } elseif ($option == "inftopre") {
@@ -27,7 +27,7 @@ if (isset($_POST['user_id'])) {
         $result = mysqli_query($con, $sql);
         //check result if no data alert user does not have any data
         if (mysqli_num_rows($result) == 0) {
-            echo "<script>alert('user does not have any data in the database');</script>";
+            echo "<script>alert('user does not have any data in the database for this operation');</script>";
             unset($result);
         }
     } elseif ($option == "pretopost") {
@@ -36,7 +36,7 @@ if (isset($_POST['user_id'])) {
         $result = mysqli_query($con, $sql);
         //check result if no data alert user does not have any data
         if (mysqli_num_rows($result) == 0) {
-            echo "<script>alert('user does not have any data in the database');</script>";
+            echo "<script>alert('user does not have any data in the database for this operation');</script>";
             unset($result);
         }
     }
