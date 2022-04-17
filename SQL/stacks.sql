@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 01:22 PM
+-- Generation Time: Apr 17, 2022 at 11:46 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `stacks`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `index` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `message` varchar(300) NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`index`, `user_id`, `name`, `email`, `message`, `timestamp`) VALUES
+(1, 2, 'Sasikumar', 'sasikumar@gmail.com', 'efwfwefwefewfwfw', '2022-04-15 20:30:48'),
+(2, 2, 'Sasikumar', 'sasikumar@gmail.com', 'sdfdfdsfsfefwfwew', '2022-04-15 20:32:12'),
+(3, 2, 'Sasikumar', 'sasikumar@gmail.com', 'dfsdfsdfsdfsdfd', '2022-04-15 20:33:38'),
+(4, 2, 'Sasikumar', 'sasikumar@gmail.com', 'erfndfdsjnd', '2022-04-15 20:35:02'),
+(5, 3, 'narayana', 'narayana@gmail.com', 'the project is really great and had great fun using it very insightfull on the workings of the stack mechanism', '2022-04-16 09:20:09'),
+(6, 5, 'profess', 'profnewbtube@gmail.com', 'this website is amazing the ui design and build quality is Top notch.', '2022-04-16 16:37:15');
 
 -- --------------------------------------------------------
 
@@ -138,6 +165,12 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `timestamp`) VALUES
 --
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`index`);
+
+--
 -- Indexes for table `infixtopost`
 --
 ALTER TABLE `infixtopost`
@@ -165,6 +198,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `index` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `infixtopost`
