@@ -19,10 +19,10 @@ reset.addEventListener('click', () => {
 function pushit() {
     if ((divs.length) > 14) {
         alert("STACK IS FULL!!!");
-    }
-    else {
+    } else {
         let color = Math.floor((Math.random() * 3));
-        let randnum = Math.floor((Math.random() * 100));
+        // let randnum = Math.floor((Math.random() * 100));
+        let randnum = document.getElementById("num").value;
         if (color == temp) {
             color++;
         }
@@ -43,9 +43,11 @@ push.addEventListener('click', pushit)
 
 stack = Array.from(document.getElementsByClassName('stack'));
 let timeout;
+
 function gooback() {
     timeout = setTimeout(goback, 600);
 }
+
 function goback() {
     stack.forEach(ele => {
         ele.style.margin = '0';
@@ -56,6 +58,7 @@ function goback() {
 
 
 let i = 0;
+
 function stackanimateopen() {
     stack.forEach(ele => {
         let move = i * 35
@@ -80,6 +83,7 @@ container.addEventListener('mouseout', stackanimateclose);
 
 //POP function
 let pop = document.getElementById('pop');
+
 function popit() {
     console.log(length1);
     if ((length1 - 1) > 0) {
@@ -103,8 +107,7 @@ function popit() {
             length1--;
         }, 2000);
         i = 0;
-    }
-    else {
+    } else {
         alert("STACK IS EMPTY!!!\n PUSH ELEMENTS TO THE STACK");
     }
 
